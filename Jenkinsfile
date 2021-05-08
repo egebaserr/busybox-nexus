@@ -1,8 +1,15 @@
-pipeline { 
-    environment {
+pipeline {
+  environment {
     registry = "egebaser11/busybox"
-    registryCredential = 'ege123456'
-  }  agent any  stages {
+    registryCredential = ‘dockerhub’
+  }
+  agent any
+  stages {
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/gustavoapolinario/microservices-node-example-todo-frontend.git'
+      }
+    }
     stage('Building image') {
       steps{
         script {
