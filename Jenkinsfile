@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "egebaser11/busybox"
-    registryCredential = ‘dockerhub’
+    registryCredential = 'dockerhub'
   }
   agent any
   stages {
