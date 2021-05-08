@@ -1,11 +1,14 @@
-pipeline {
-    agent { dockerfile true }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-                sh 'svn --version'
-            }
+pipeline { 
+    environment {
+    registry = "egebaser11/busybox"
+    registryCredential = 'ege123456'
+  }  agent any  stages {
+    stage('Building image') {
+      steps{
+        script {
+          docker.build registry + ":$BUILD_NUMBER"
         }
+      }
     }
+  }
 }
