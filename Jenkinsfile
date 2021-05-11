@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    label 'docker' 
-  }   
+  agent any 
   environment {
     registry = "egebaser11/busybox"
     registryCredential = 'dockerhub'
