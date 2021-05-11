@@ -1,9 +1,12 @@
 pipeline {
+  agent {
+    label 'docker' 
+  }   
   environment {
     registry = "egebaser11/busybox"
     registryCredential = 'dockerhub'
   }
-  agent any
+  
   stages {
     stage('Cloning Git') {
       steps {
