@@ -1,2 +1,2 @@
 FROM busybox
-RUN /build.sh
+RUN ./build.sh
